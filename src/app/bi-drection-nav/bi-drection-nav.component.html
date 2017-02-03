@@ -1,4 +1,4 @@
-<div class="flex--row">
+<div class="flex--row bi-directional-nav-container">
   <a class="arrow-container" href="" (click)="prev($event)" [ngClass]="{transparent: step === 0}">
     <i class="fa fa-2x fa-chevron-left"></i>
   </a>
@@ -6,7 +6,7 @@
     <i class="fa dot" *ngFor="let dot of totalStepsArray; let i = index"
        [ngClass]="{'fa-circle-o': step !== i, 'fa-circle': step === i}"></i>
   </div>
-  <a class="arrow-container" href="" (click)="next($event)" [ngClass]="{transparent: step === totalStepsInt}">
+  <a class="arrow-container" href="" (click)="next($event)" [ngClass]="{transparent: step === totalStepsInt - 1}">
     <i class="fa fa-2x fa-chevron-right"></i>
   </a>
 </div>

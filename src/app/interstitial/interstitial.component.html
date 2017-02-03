@@ -1,12 +1,18 @@
 <div class="page--center-center background--primary">
-  <div class="interstitial__outer_container panel panel-default">
-    <div class="panel-body flex--column flex--1">
-      <div class="interstitial__inner_container">
-        <div class="interstitial__image">
-        <img src="../../assets/test.gif" alt="">
-        </div>
-      </div>
-      <app-bi-drection-nav totalSteps="5"></app-bi-drection-nav>
+  <div class="interstitial__outer_container flex--column corners--rounded">
+    <div class="text-right" style="margin-bottom: 15px">
+      <i class="fa fa-times fa-2x"></i>
     </div>
+    <div class="interstitial__inner_container flex--1">
+      <div class="interstitial__slide"
+           *ngFor="let slide of slides"
+           [ngStyle]="{left: slide.left + 'px'}">
+          <div class="interstitial__image" [ngStyle]="{background: slide.background}"></div>
+        <h4 class="text-center">{{slide.text}}</h4>
+      </div>
+    </div>
+    <app-bi-drection-nav [totalSteps]="slides.length"
+                         (onPrev)="onPrev($event)"
+                         (onNext)="onNext($event)"></app-bi-drection-nav>
   </div>
 </div>

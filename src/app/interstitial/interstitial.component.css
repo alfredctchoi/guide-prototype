@@ -1,15 +1,28 @@
 .interstitial__outer_container {
   width: 600px;
   background: var(--color-white);
-  display: flex;
+  padding: 15px;
+  position: relative;
 }
 
 .interstitial__inner_container {
   flex: 1;
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.interstitial__slide{
+  width: 570px;
+  display: inline-block;
+  position: absolute;
+  transition: left 0.3s linear;
 }
 
 .interstitial__image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 300px;
+}
+
+.interstitial__slide-description{
+
 }

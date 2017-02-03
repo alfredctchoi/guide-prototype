@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-bi-drection-nav',
@@ -14,6 +14,12 @@ export class BiDrectionNavComponent implements OnInit {
   @Input()
   totalSteps: string = '0';
 
+  @Output()
+  onNext: EventEmitter<any> = new EventEmitter();
+
+  @Output()
+  onPrev: EventEmitter<any> = new EventEmitter();
+
   constructor() {
   }
 
@@ -24,11 +30,15 @@ export class BiDrectionNavComponent implements OnInit {
 
   next(event: MouseEvent): void {
     event.preventDefault();
-    this.step < this.totalStepsInt && this.step++;
+    if (this.step >= this.totalStepsInt - 1) return;
+    this.step++;
+    this.onNext.emit(this.step);
   }
 
-  prev(event: MouseEvent): void{
+  prev(event: MouseEvent): void {
     event.preventDefault();
-    this.step > 0 && this.step--;
+    if (this.step <= 0) return;
+    this.step--;
+    this.onPrev.emit(this.step);
   }
 }
