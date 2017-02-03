@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --color-primary: #d81e05;
+  --color-white: #FFFFFF;
+}
+
+.background--white {
+  background: var(--color-white);
+}
+
+.page--center-center {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background--primary {
+  background: var(--color-primary);
+}
+
+.corners--rounded{
+  border-radius: 10px;
+}
+
+.flex--column{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex--row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex--1 {
+  flex: 1;
+}
+
+.transparent {
+  opacity: 0;
+  cursor: default;
+}

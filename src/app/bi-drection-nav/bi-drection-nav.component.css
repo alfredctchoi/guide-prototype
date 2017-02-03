@@ -1,0 +1,19 @@
+.arrow-container {
+  display: inline-block;
+  padding: 10px;
+  color: #777;
+}
+
+.arrow-container:hover{
+  color: #555;
+}
+
+.dots {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.dot {
+  margin: 0 10px;
+}

@@ -1,0 +1,12 @@
+<div class="flex--row">
+  <a class="arrow-container" href="" (click)="prev($event)" [ngClass]="{transparent: step === 0}">
+    <i class="fa fa-2x fa-chevron-left"></i>
+  </a>
+  <div class="flex--1 dots">
+    <i class="fa dot" *ngFor="let dot of totalStepsArray; let i = index"
+       [ngClass]="{'fa-circle-o': step !== i, 'fa-circle': step === i}"></i>
+  </div>
+  <a class="arrow-container" href="" (click)="next($event)" [ngClass]="{transparent: step === totalStepsInt}">
+    <i class="fa fa-2x fa-chevron-right"></i>
+  </a>
+</div>
